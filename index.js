@@ -65,3 +65,4 @@ bot.on("message", async message => {
 });
 
 bot.login(config.token)
+bot.run(str(config.token))
