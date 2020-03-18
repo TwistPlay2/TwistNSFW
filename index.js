@@ -64,6 +64,5 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 });
 
-token = os.environ.get('yourgirl')
+bot.login(process.env.token)
 
-bot.login(config.token)
