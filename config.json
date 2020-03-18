@@ -1,4 +1,4 @@
 {
   "prefix": "~",
-  "token": "token"
+  "BOT_TOKEN": "token"
 }
