@@ -2,7 +2,6 @@ const Discord = require("discord.js")
 const config = require("./config.json")
 const bot = new Discord.Client();
 const fs = require("fs");
-const token = process.env.token;
 bot.commands = new Discord.Collection();
 const ownerID = '473526373575819264';
 
@@ -64,5 +63,7 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
 });
+
+token = os.environ.get('yourgirl')
 
 bot.login(config.token)
