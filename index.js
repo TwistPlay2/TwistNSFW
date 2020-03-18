@@ -2,6 +2,7 @@ const Discord = require("discord.js")
 const config = require("./config.json")
 const bot = new Discord.Client();
 const fs = require("fs");
+const token = process.env.token;
 bot.commands = new Discord.Collection();
 const ownerID = '473526373575819264';
 
@@ -65,4 +66,3 @@ bot.on("message", async message => {
 });
 
 bot.login(config.token)
-bot.run(str(config.token))
