@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   let username = args[0]
  
  
-  if (!args[0]) return message.channel.send('Wprowadź Nazwę konta (osu!)')
+  if (!args[0]) return message.channel.send('Введите имя пользователя (osu!). Если в нике пробелы, то пропишите ник таким образом: nathan_on_osu')
  
 api.getUser({u: username}).then(user => {
   const embed = new MessageEmbed()
