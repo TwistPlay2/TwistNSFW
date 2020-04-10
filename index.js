@@ -56,7 +56,7 @@ bot.on('ready', () => {
 bot.on("message", async message => {
 
   let prefix = config.prefix;
-   if (!message.content.startsWith(config.prefix)) return;
+  if (!message.content.startsWith(config.prefix)) return;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
