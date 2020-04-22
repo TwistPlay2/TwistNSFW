@@ -42,7 +42,7 @@ jsfile.forEach((f, i) =>{
 });
 
 bot.on('ready', () => {
-  let myGuild = client.guilds.get('591368030999674902')
+  let myGuild = bots.guilds.forEach('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
@@ -51,7 +51,7 @@ bot.on('ready', () => {
 });
 
 bot.on('guildMemberAdd', () => {
-  let myGuild = client.guilds.get('591368030999674902')
+  let myGuild = bots.guilds.forEach('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
@@ -60,7 +60,7 @@ bot.on('guildMemberAdd', () => {
 });
 
 bot.on('guildMemberRemove', () => {
-  let myGuild = client.guilds.get('591368030999674902')
+  let myGuild = bots.guilds.forEach('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
