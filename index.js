@@ -45,16 +45,7 @@ jsfile.forEach((f, i) =>{
 });
 });
 
-bot.on('ready', () => {
-    bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: '-tw1st-',
-            type: "STREAMING",
-            url: "https://www.twitch.tv/twistplay2"
-        }
-    });
-});
+bot.user.setPresence({ game: { name: '-tw1st', type: "streaming", url: "https://www.twitch.tv/twistplay2"}}); 
   
 bot.on("message", async message => {
 
