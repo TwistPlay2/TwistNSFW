@@ -7,6 +7,9 @@ const ownerID = '473526373575819264';
 
 const active = new Map();
 
+const serverStats = {
+    memberCoutID: '702401815815127061'
+
 fs.readdir("./commands", (err, files) => { // Подключение команд 
 
   if(err) console.log(err);
@@ -41,33 +44,20 @@ jsfile.forEach((f, i) =>{
 });
 });
 
-bot.on('ready', () => {
-  let myGuild = bot.guilds.forEach('591368030999674902')
-  let memberCount = myGuild
-  let memberCountChannel = myGuild.channels.get('702401815815127061');
-  memberCountChannel.setName('Members: ' + memberCount)
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
+bot.on('guildMemberAdd', member => {
+  if (member.guild.id !== serverStats.guildID) return;
+
+  bot.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filte(m => !m.bot).size}`);
+
 });
 
-bot.on('guildMemberAdd', () => {
-  let myGuild = bot.guilds.forEach('591368030999674902')
-  let memberCount = myGuild
-  let memberCountChannel = myGuild.channels.get('702401815815127061');
-  memberCountChannel.setName('Members: ' + memberCount)
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
-});
+bot.on('guildMemberRemove', member => {
+  if (member.guild.id !== serverStats.guildID) return;
 
-bot.on('guildMemberRemove', () => {
-  let myGuild = bot.guilds.forEach('591368030999674902')
-  let memberCount = myGuild
-  let memberCountChannel = myGuild.channels.get('702401815815127061');
-  memberCountChannel.setName('Members: ' + memberCount)
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
+  
+  bot.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filte(m => !m.bot).size}`);
 });
-
+  
 
 bot.on("message", async message => {
 
