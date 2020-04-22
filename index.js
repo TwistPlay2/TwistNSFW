@@ -41,21 +41,8 @@ jsfile.forEach((f, i) =>{
 });
 });
 
-
-bot.on('ready', () => { 
-  console.log(`Подключился ${bot.user.tag}!`); // Тип подключился, окда.
-    bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: '-tw1st.',
-            type: "STREAMING",
-            url: "https://www.twitch.tv/twistplay2"
-        }
-    });
-});
-
 bot.on('ready', () => {
-  let myGuild = bot.guilds.get('591368030999674902')
+  let myGuild = client.guilds.get('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
@@ -64,7 +51,7 @@ bot.on('ready', () => {
 });
 
 bot.on('guildMemberAdd', () => {
-  let myGuild = bot.guilds.get('591368030999674902')
+  let myGuild = client.guilds.get('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
@@ -73,7 +60,7 @@ bot.on('guildMemberAdd', () => {
 });
 
 bot.on('guildMemberRemove', () => {
-  let myGuild = bot.guilds.get('591368030999674902')
+  let myGuild = client.guilds.get('591368030999674902')
   let memberCount = myGuild
   let memberCountChannel = myGuild.channels.get('702401815815127061');
   memberCountChannel.setName('Members: ' + memberCount)
