@@ -45,7 +45,7 @@ jsfile.forEach((f, i) =>{
 });
 });
 
-bot.user.setPresence({ game: { name: '-tw1st', type: "streaming", url: "https://www.twitch.tv/twistplay2"}}); 
+bot.user.setActivity({ game: { name: '-tw1st', type: "streaming", url: "https://www.twitch.tv/twistplay2"}}); 
   
 bot.on("message", async message => {
 
