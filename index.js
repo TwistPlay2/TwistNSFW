@@ -53,6 +53,35 @@ bot.on('ready', () => {
         }
     });
 });
+
+bot.on('ready', () => {
+  let myGuild = bot.guilds.get('591368030999674902')
+  let memberCount = myGuild
+  let memberCountChannel = myGuild.channels.get('702401815815127061');
+  memberCountChannel.setName('Members: ' + memberCount)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+});
+
+bot.on('guildMemberAdd', () => {
+  let myGuild = bot.guilds.get('591368030999674902')
+  let memberCount = myGuild
+  let memberCountChannel = myGuild.channels.get('702401815815127061');
+  memberCountChannel.setName('Members: ' + memberCount)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+});
+
+bot.on('guildMemberRemove', () => {
+  let myGuild = bot.guilds.get('591368030999674902')
+  let memberCount = myGuild
+  let memberCountChannel = myGuild.channels.get('702401815815127061');
+  memberCountChannel.setName('Members: ' + memberCount)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+});
+
+
 bot.on("message", async message => {
 
   let prefix = config.prefix;
