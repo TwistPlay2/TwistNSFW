@@ -44,22 +44,7 @@ jsfile.forEach((f, i) =>{
   bot.commands.set(props.help.name, props);
 });
 });
-
-bot.on('guildMemberAdd', member => {
-  if (member.guild.id !== serverStats.guildID) return;
-
-  bot.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filte(m => !m.bot).size}`);
-
-});
-
-bot.on('guildMemberRemove', member => {
-  if (member.guild.id !== serverStats.guildID) return;
-
   
-  bot.channels.get(serverStats.memberCountID).setName(`Member Count: ${member.guild.members.filte(m => !m.bot).size}`);
-});
-  
-
 bot.on("message", async message => {
 
   let prefix = config.prefix;
