@@ -9,6 +9,7 @@ const active = new Map();
 
 const serverStats = {
     memberCoutID: '702401815815127061'
+};
 
 fs.readdir("./commands", (err, files) => { // Подключение команд 
 
