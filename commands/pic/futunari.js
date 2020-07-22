@@ -6,7 +6,7 @@ const neko = new client();
 module.exports.run = async (bot, message, args, ops, async, run) => {
     if (!message.channel.nsfw) return message.reply("🔞 Это не NSFW канал, чтобы использовать такие команды.");
 
-    const msg = await message.channel.send(`:thinking: **${message.member.displayName}** Ищет себе лольку...`);
+    const msg = await message.channel.send(" ");
     const { body } = await get("https://nekos.life/api/v2/img/futanari");
     await msg.edit({
       embed: {
