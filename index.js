@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require("./config.json")
+const { addexp } = require("./commands/xp.js")
 const bot = new Discord.Client();
 const fs = require("fs");
 bot.commands = new Discord.Collection();
@@ -60,6 +61,9 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
+  if(message.author.bot) return;
+  if(!message.guild) return;
+return addexp(message)
 });
 
 bot.login(process.env.BOT_TOKEN)
