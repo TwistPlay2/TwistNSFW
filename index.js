@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const config = require("./config.json")
+const db = require("quick.db")
 const { addexp } = require("./commands/xp.js")
 const bot = new Discord.Client();
 const fs = require("fs");
