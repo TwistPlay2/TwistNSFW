@@ -47,8 +47,8 @@ client.on("message", async (message) => {
     // Handle XP
     xp(message);
     // command handler
-    if (!message.content.startsWith(client.config.prefix)) return;
-    let args = message.content.slice(client.config.prefix.length).trim().split(" ");
+    if (!message.content.startsWith(config.prefix)) return;
+    let args = message.content.slice(config.prefix.length).trim().split(" ");
     let command = args.shift().toLowerCase();
     let commandFile = client.commands.get(command);
     if (!commandFile) return;
