@@ -7,10 +7,6 @@ const snekfetch = require('snekfetch');
 client.db = require("quick.db");
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
-client.config = {
-    TOKEN: "token",
-    prefix: "!"
-};
 
 // Load Commands
 fs.readdir("./commands/", (err, files) => {
