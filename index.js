@@ -69,4 +69,4 @@ function xp(message) {
     }
 }
 
-client.login(process.env.client.config.TOKEN);
+client.login(client.config.TOKEN);
