@@ -31,8 +31,11 @@ fs.readdir("./commands/pic", (err, files) => {
 });
 
 // Events
-client.once("ready", () => {
-    console.log("Ready!");
+client.on('ready', () => {
+    bot.user.setActivity(".tw1st.", {
+    type: "STREAMING",
+    url: "https://www.twitch.tv/twistplay2"
+});
 });
 
 client.on("error", console.error);
