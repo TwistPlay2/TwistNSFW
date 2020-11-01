@@ -44,12 +44,15 @@ client.on("message", async (message) => {
     // Handle XP
     xp(message);
     // command handler
-    if (!message.content.startsWith(config.prefix)) return;
-    let args = message.content.slice(config.prefix.length).trim().split(" ");
-    let command = args.shift().toLowerCase();
-    let commandFile = client.commands.get(command);
-    if (!commandFile) return;
-    commandFile.run(client, message, args);
+  let prefix = config.prefix;
+  if (!message.content.startsWith(config.prefix)) return;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(bot,message,args);
+  if(message.author.bot) return;
+  if(!message.guild) return;
 });
 
 function xp(message) {
