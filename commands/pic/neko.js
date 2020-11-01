@@ -5,7 +5,7 @@ const client = require('nekos.life');
 const neko = new client();
 
 
-module.exports.run = async (bot, message, args, ops, async, run) => {
+module.exports.run = async (client, message, args, ops, async, run) => {
     if (!message.channel.nsfw) return message.reply("🔞 Это не NSFW канал, чтобы использовать такие команды.");
 
     const msg = await message.channel.send(" ");
