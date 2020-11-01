@@ -1,19 +1,27 @@
 {
-  "name": "nsfw",
+  "name": "TwistBot",
   "version": "1.0.0",
-  "description": "TwistBot",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "TwistPlay",
-  "license": "ISC",
+  "author": "Snowflake107",
+  "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
-    "discord.js": "^12.0.2",
-    "nekos.life": "^2.0.5",
+    "canvacord": "^5.0.7",
+    "discord.js": "^12.4.1",
+    "hastebin-gen": "^2.0.5",
+    "jumble-words": "^1.0.1",
+    "nekos.life": "^2.0.7",
+    "node-fetch": "^2.6.1",
     "node-osu": "^2.2.0",
-    "snekfetch": "^4.0.4",
-    "fs": "0.0.1-security",
-    "ms": "^2.1.1"
+    "quick.db": "^7.1.3",
+    "snekfetch": "^3.4.5",
+    "superagent": "^6.1.0",
+    "twemoji-parser": "^13.0.0"
   }
 }
