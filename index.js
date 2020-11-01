@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const config = require("./config.json");
 const client = new Discord.Client();
 const fs = require("fs");
 const snekfetch = require('snekfetch');
@@ -7,6 +6,11 @@ const snekfetch = require('snekfetch');
 client.db = require("quick.db");
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
+
+client.config = {
+    TOKEN: "TOKEN",
+    prefix: "~"
+};
 
 // Load Commands
 fs.readdir("./commands/", (err, files) => {
@@ -44,15 +48,12 @@ client.on("message", async (message) => {
     // Handle XP
     xp(message);
     // command handler
-  let prefix = config.prefix;
-  if (!message.content.startsWith(config.prefix)) return;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(bot,message,args);
-  if(message.author.bot) return;
-  if(!message.guild) return;
+    if (!message.content.startsWith(client.config.prefix)) return;
+    let args = message.content.slice(client.config.prefix.length).trim().split(" ");
+    let command = args.shift().toLowerCase();
+    let commandFile = client.commands.get(command);
+    if (!commandFile) return;
+    commandFile.run(client, message, args);
 });
 
 function xp(message) {
@@ -68,4 +69,4 @@ function xp(message) {
     }
 }
 
-client.login(process.env.TOKEN);
+client.login(process.env.client.config.TOKEN);
